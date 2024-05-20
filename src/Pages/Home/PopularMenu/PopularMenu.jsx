@@ -9,26 +9,30 @@ const PopularMenu = () => {
 
     useEffect(() => {
         fetch('Menu.json')
-        .then(res => res.json())
-        .then(data => {
-            const popularItem = data.filter(item => item.category === 'popular')
-            setMenu(popularItem)})
+            .then(res => res.json())
+            .then(data => {
+                const popularItem = data.filter(item => item.category === 'popular')
+                setMenu(popularItem)
+            })
     }, [])
 
 
     return (
         <section className=" mb-12">
             <SectionTitle
-            heading="From Our Menu"
-            subHeading="Popular Items"
+                heading="From Our Menu"
+                subHeading="Popular Items"
             ></SectionTitle>
             <div className=" grid md:grid-cols-2 gap-10">
                 {
                     menu.map(item => <MenuItem
-                    key={item._id}
-                    item={item}
+                        key={item._id}
+                        item={item}
                     ></MenuItem>)
                 }
+            </div>
+            <div className="text-center mx-auto">
+                <button className="btn  btn-outline border-0 border-b-4 mt-4">View Full Menu</button>
             </div>
 
         </section>
