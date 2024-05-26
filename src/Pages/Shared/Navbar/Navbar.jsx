@@ -22,7 +22,7 @@ const Navbar = () => {
             <li><Link to='/menu'>Our Menu</Link></li>
             <li><Link to='/order/salad'>Order Food</Link></li>
             <li>
-                <Link to='/'>
+                <Link to='/dashboard/cart'>
                     <button className="flex">
                         <FaCartShopping  className="mr-2"/>
                         <div className="badge badge-secondary">{cart.length}</div>
