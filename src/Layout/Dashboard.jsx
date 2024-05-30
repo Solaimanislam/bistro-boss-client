@@ -3,12 +3,13 @@ import { FaBook, FaCalendar, FaList, FaUsers, FaUtensils } from "react-icons/fa6
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 import { MdEmail } from "react-icons/md";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Dashboard = () => {
     const [cart] = useCart();
     // ToDo:
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
 
     return (
