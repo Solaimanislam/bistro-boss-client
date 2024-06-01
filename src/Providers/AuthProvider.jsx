@@ -51,15 +51,17 @@ const AuthProvider = ({ children }) => {
                 .then(res => {
                     if(res.data.token){
                         localStorage.setItem('Access-token', res.data.token)
+                        setLoading(false);
                     }
                 })
 
             } else {
                 // Todo: remove token (if token stored in the client side ) 
                 localStorage.removeItem('Access-token');
+                setLoading(false);
 
             }
-            setLoading(false);
+            
         });
         return () => {
             return unsubscribe();

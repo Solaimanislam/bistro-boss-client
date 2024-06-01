@@ -1,14 +1,14 @@
 import useAuth from "../../../Hooks/useAuth";
 
 
-const AdminHome = () => {
+const UserHome = () => {
 
     const {user} = useAuth();
 
     return (
         <div>
             <h2 className="text-3xl">
-                <span>hi! Welcome</span>
+                <span>Hi! Welcome</span>
                 {
                     user?.displayName ? user.displayName : 'Back'
                 }
@@ -17,4 +17,4 @@ const AdminHome = () => {
     );
 };
 
-export default AdminHome;
+export default UserHome;
